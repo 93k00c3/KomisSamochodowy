@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@Komis_high?TNS_ADMIN=/Users/admin/Documents/Wallet_Komis1</property>
+        <property name="hibernate.connection.username">ADMIN</property>
+        <property name="hibernate.connection.password">Komissamochodowy123</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="com.example.KomisSamochodowy_RP_Cars.model.Klient"/>
+        <mapping class="com.example.KomisSamochodowy_RP_Cars.model.Egzemplarz"/>
+        <mapping class="com.example.KomisSamochodowy_RP_Cars.model.Leasing"/>
+        <mapping class="com.example.KomisSamochodowy_RP_Cars.model.Transakcja_kupna"/>
+        <mapping class="com.example.KomisSamochodowy_RP_Cars.model.Model"/>
+
+    </session-factory>
+</hibernate-configuration>

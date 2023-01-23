@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane fx:id="myTabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="791.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.KomisSamochodowy_RP_Cars.HeadSceneController">
+
+    <tabs>
+
+      <Tab fx:id="todoTab" text="TODO">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="logoutButtonTODO" layoutX="673.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj Się" />
+                  <Label fx:id="actualDateLabel" layoutX="19.0" layoutY="2.0" prefHeight="49.0" prefWidth="175.0" text="AKTUALNA DATA" />
+                  <Button fx:id="submitButton" layoutX="332.0" layoutY="74.0" mnemonicParsing="false" onAction="#addTo" text="Dodaj" />
+                  <RadioButton fx:id="r1" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Dzisiaj" textAlignment="CENTER">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="whichDay" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="r2" layoutX="79.0" layoutY="78.0" mnemonicParsing="false" text="Jutro" toggleGroup="$whichDay" />
+                  <ListView fx:id="todayTasks" layoutX="28.0" layoutY="224.0" prefHeight="200.0" prefWidth="300.0" />
+                  <ListView fx:id="tomorrowTasks" layoutX="466.0" layoutY="224.0" prefHeight="200.0" prefWidth="294.0" />
+                  <TextField fx:id="myTextField" layoutX="145.0" layoutY="74.0" />
+                  <Separator layoutY="113.0" prefHeight="15.0" prefWidth="791.0" />
+                  <Separator layoutY="48.0" prefHeight="15.0" prefWidth="791.0" />
+                  <Label layoutX="28.0" layoutY="157.0" prefHeight="49.0" prefWidth="175.0" text="ZADANIA NA DZISIAJ" textAlignment="CENTER" />
+                  <Label layoutX="466.0" layoutY="157.0" prefHeight="49.0" prefWidth="175.0" text="ZADANIA NA JUTRO" textAlignment="CENTER" />
+                  <Button fx:id="doneButton" layoutX="369.0" layoutY="311.0" mnemonicParsing="false" onAction="#moveToDone" prefHeight="26.0" prefWidth="58.0" text="DONE" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+
+      <Tab fx:id="modeleTab" text="Modele">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="modelTableView" layoutY="75.0" prefHeight="374.0" prefWidth="791.0">
+                    <columns>
+                      <TableColumn fx:id="idModelColumn" prefWidth="101.0" text="ID Modelu" />
+                      <TableColumn fx:id="markaColumn" prefWidth="74.0" text="Marka" />
+                        <TableColumn fx:id="modelColumn" prefWidth="69.0" text="Model" />
+                        <TableColumn fx:id="typNadwoziaColumn" prefWidth="96.0" text="Typ nadwozia" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="logoutButtonFlota" layoutX="682.0" layoutY="26.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+                  <Button fx:id="updateModelButton" layoutX="190.0" layoutY="26.0" mnemonicParsing="false" onAction="#updateModelInDataBase" text="Zmień" />
+                  <Button fx:id="removeModelButton" layoutX="113.0" layoutY="26.0" mnemonicParsing="false" onAction="#removeModelFromDataBase" text="Usun" />
+                  <Button fx:id="addModelButton" layoutX="35.0" layoutY="26.0" mnemonicParsing="false" onAction="#addModelToDataBase" text="Dodaj" />
+
+               </children></AnchorPane>
+      </content>
+    </Tab>
+
+      <Tab fx:id="egzemplarzeTab" text="Egzemplarze">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="egzemplarzTableView" layoutY="75.0" prefHeight="374.0" prefWidth="785.0">
+                     <columns>
+                        <TableColumn fx:id="idEgzemplarzColumn" prefWidth="95.0" text="ID Egzemplarza" />
+                        <TableColumn fx:id="idModeluColumn" prefWidth="64.0" text="ID Modelu" />
+                        <TableColumn fx:id="rokProdukcjiColumn" prefWidth="94.0" text="Rok produkcji" />
+                        <TableColumn fx:id="pojemnoscSilnikaColumn" prefWidth="102.0" text="Pojemnosc silnika" />
+                        <TableColumn fx:id="przebiegColumn" prefWidth="61.0" text="Przebieg" />
+                        <TableColumn fx:id="rodzajPaliwaColumn" prefWidth="82.0" text="Rodzaj paliwa" />
+                        <TableColumn fx:id="kolorColumn" minWidth="0.0" prefWidth="60.0" text="Kolor" />
+                        <TableColumn fx:id="vinColumn" minWidth="0.0" prefWidth="82.0" text="VIN" />
+                        <TableColumn fx:id="dostepnoscColumn" prefWidth="72.0" text="Dostepnosc" />
+                        <TableColumn fx:id="cenaColumn" prefWidth="62.0" text="Cena" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="logoutButtonFlota1" layoutX="682.0" layoutY="26.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+                  <Button fx:id="updateEgzemplarzButton" layoutX="190.0" layoutY="26.0" mnemonicParsing="false" onAction="#updateEgzemplarzInDataBase" text="Zmień" />
+                  <Button fx:id="removeEgzemplarzButton" layoutX="113.0" layoutY="26.0" mnemonicParsing="false" onAction="#removeEgzemplarzFromDataBase" text="Usun" />
+                  <Button fx:id="addEgzemplarzButton" layoutX="35.0" layoutY="26.0" mnemonicParsing="false" onAction="#addEgzemplarzToDataBase" text="Dodaj" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+
+    <Tab fx:id="klienciTab" text="Klienci">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="679.0">
+               <children>
+                  <TableView fx:id="klientTableView" layoutY="75.0" prefHeight="374.0" prefWidth="791.0">
+                    <columns>
+                      <TableColumn fx:id="idKlientColumn" prefWidth="70.0" text="ID Klienta" />
+                      <TableColumn fx:id="imieColumn" prefWidth="66.0" text="Imie" />
+                        <TableColumn fx:id="nazwiskoColumn" prefWidth="67.0" text="Nazwisko" />
+                        <TableColumn fx:id="dataUrodzeniaColumn" prefWidth="59.0" text="Data ur." />
+                        <TableColumn fx:id="peselColumn" prefWidth="75.0" text="PESEL" />
+                        <TableColumn fx:id="numerDowoduColumn" prefWidth="93.0" text="Numer dowodu" />
+                        <TableColumn fx:id="emailColumn" prefWidth="102.0" text="Email" />
+                        <TableColumn fx:id="telefonColumn" prefWidth="75.0" text="Telefon" />
+                        <TableColumn fx:id="miejscowoscColumn" prefWidth="81.0" text="Miejscowosc" />
+                        <TableColumn fx:id="kodPocztowyColumn" prefWidth="89.0" text="Kod pocztowy" />
+                        <TableColumn fx:id="ulicaColumn" prefWidth="47.0" text="Ulica" />
+                        <TableColumn fx:id="numerDomuColumn" prefWidth="76.0" text="Numer domu" />
+                        <TableColumn fx:id="firmaColumn" prefWidth="76.0" text="Firma" />
+                        <TableColumn fx:id="nipColumn" prefWidth="76.0" text="NIP" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="logoutButtonKlient" layoutX="675.0" layoutY="27.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+                  <Button fx:id="addKlientButton" layoutX="27.0" layoutY="27.0" mnemonicParsing="false" onAction="#addKlientToDataBase" text="Dodaj" />
+                  <Button fx:id="removeKlientButton" layoutX="106.0" layoutY="28.0" mnemonicParsing="false" onAction="#removeKlientFromDataBase" text="Usuń" />
+                  <Button fx:id="updateKlientButton" layoutX="181.0" layoutY="28.0" mnemonicParsing="false" onAction="#updateKlientInDataBase" text="Zmień" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+
+        <Tab fx:id="leasingiTab" text="Leasingi / Wypożyczenia">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TableView fx:id="leasingTableView" layoutX="-6.0" layoutY="75.0" prefHeight="374.0" prefWidth="800.0">
+                            <columns>
+                                <TableColumn fx:id="idLeasinguColumn" prefWidth="96.0" text="ID Leasingu" />
+                                <TableColumn fx:id="idKlientaColumn" prefWidth="82.0" text="ID Klienta" />
+                                <TableColumn fx:id="idEgzemplarzaColumn" prefWidth="105.0" text="ID Egzemplarz" />
+                                <TableColumn fx:id="dataPoczatekColumn" prefWidth="100.0" text="Data początek" />
+                                <TableColumn fx:id="dataKoncowaColumn" prefWidth="102.0" text="Data końcowa" />
+                                <TableColumn fx:id="oplataMiesiecznaColumn" prefWidth="121.0" text="Opłata miesięczna" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="logoutButtonLeasing" layoutX="673.0" layoutY="25.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+                        <Button fx:id="addLeasingButton" layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#addLeasingToDataBase" text="Dodaj" />
+                        <Button fx:id="removeLeasingButton" layoutX="109.0" layoutY="24.0" mnemonicParsing="false" onAction="#removeLeasingFromDataBase" text="Usuń" />
+                        <Button fx:id="updateLeasingButton" layoutX="187.0" layoutY="25.0" mnemonicParsing="false" onAction="#updateLeasingInDataBase" text="Zmień" />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+
+      <Tab fx:id="transakcjaKupnaTab" text="Transakcje Kupna">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="transakcjeTableView" layoutY="75.0" prefHeight="374.0" prefWidth="791.0">
+                    <columns>
+                      <TableColumn fx:id="idTransakcjiColumn" prefWidth="105.0" text="ID Transakcji" />
+                      <TableColumn fx:id="idKlientaColumn1" prefWidth="65.0" text="ID Klient" />
+                        <TableColumn fx:id="idEgzemplarzaColumn1" prefWidth="113.0" text="ID Egzemplarz" />
+                        <TableColumn fx:id="dataZakupuColumn" prefWidth="128.0" text="Data zakupu" />
+                        <TableColumn fx:id="dlugoscGwarancjiColumn" prefWidth="129.0" text="Długość gwarancji" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="logoutButtonTransakcja_kupna" layoutX="672.0" layoutY="27.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj się" />
+                  <Button fx:id="addTransakcja_KupnaButton" layoutX="30.0" layoutY="26.0" mnemonicParsing="false" onAction="#addTransakcjaToDataBase" text="Dodaj" />
+                  <Button fx:id="removeTransakcja_KupnaButton" layoutX="116.0" layoutY="27.0" mnemonicParsing="false" onAction="#removeTransakcjaFromDataBase" text="Usuń" />
+                  <Button fx:id="updateTransakcja_KupnaButton" layoutX="187.0" layoutY="27.0" mnemonicParsing="false" onAction="#updateTransakcjaInDataBase" text="Zmień" />
+               </children></AnchorPane>
+         </content>
+      </Tab>
+
+  </tabs>
+</TabPane>
