@@ -5,4 +5,4 @@ Połączenie z bazą danych Oracle SQL jest wykonywane za pomocą specjalnego wa
 
 GUI wykorzystywane w projekcie to JavaFX.
 
-Paweł Kolasa & Rafał Kalandyk
+Projekt został wspólnie stworzony razem z @RafalKal
